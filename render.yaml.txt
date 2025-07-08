@@ -3,9 +3,9 @@ services:
     name: buddycode-backend
     runtime: python
     buildCommand: ""
-    startCommand: python backend/model_api.py
+    startCommand: python backend/app.py
     envVars:
       - key: API_KEY
-        value: your_openrouter_api_key_here
+        value: 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
       - key: MODEL
         value: openai/gpt-3.5-turbo

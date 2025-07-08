@@ -2,6 +2,13 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 from model_api import generate_code
 
+from flask import Flask
+app = Flask(__name__)
+
+@app.route("/")
+def home():
+    return "BuddyCode is running!"
+
 app = Flask(__name__, static_folder="../frontend", static_url_path="/static")
 CORS(app)  # Enables cross-origin support for frontend JS
 

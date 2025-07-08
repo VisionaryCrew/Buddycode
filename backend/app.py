@@ -1,6 +1,8 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-from model_api import generate_code
+from backend.model_api import generate_code
+
+
 
 # Define app with static frontend path
 app = Flask(__name__, static_folder="../frontend", static_url_path="/static")

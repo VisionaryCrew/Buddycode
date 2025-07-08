@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BuddyCode ⌬ Logic-to-Code Interpreter</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <div class="matrix-bg"></div>
+
+  <div class="container glass-card">
+    <h1 class="neon-text">🧠 BuddyCode</h1>
+    <p class="tagline">The Human Logic to Code Interpreter</p>
+
+    <textarea id="logicInput" class="glow-input" placeholder="Explain your logic here..." rows="8"></textarea>
+
+    <button class="glow-button" onclick="generateCode()">⚡ Generate Python Code</button>
+
+    <!-- OUTPUT BLOCKS -->
+    <pre id="reasoningOutput" class="code-output logic-block">/* Reasoning will appear here... */</pre>
+    <pre id="codeOutput" class="code-output code-block">/* Python code will appear here... */</pre>
+    <pre id="edgeCaseOutput" class="code-output edge-block">/* Edge cases will appear here... */</pre>
+  </div>
+
+  <footer>
+    <p>🚀 Built by @blackhole • Precision Engineered for Thinkers</p>
+  </footer>
+
+  <script src="/static/main.js"></script>
+</body>
+</html>

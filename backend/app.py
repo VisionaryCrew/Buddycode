@@ -2,15 +2,9 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 from model_api import generate_code
 
-from flask import Flask
-app = Flask(__name__)
-
-@app.route("/")
-def home():
-    return "BuddyCode is running!"
-
+# Define app with static frontend path
 app = Flask(__name__, static_folder="../frontend", static_url_path="/static")
-CORS(app)  # Enables cross-origin support for frontend JS
+CORS(app)  # Enables cross-origin support
 
 @app.route('/')
 def index():
@@ -32,7 +26,6 @@ def generate():
 
     generated_output = generate_code(user_logic)
 
-    # If generate_code returned a string (like the "⚠️ logic incomplete" warning), format it as object
     if isinstance(generated_output, str):
         return jsonify({
             "response": {
@@ -43,6 +36,3 @@ def generate():
         })
 
     return jsonify({"response": generated_output})
-
-if __name__ == "__main__":
-    app.run(debug=True)

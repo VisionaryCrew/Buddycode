@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-from backend.model_api import generate_code
+from model_api import generate_code
 
 
 
@@ -24,7 +24,7 @@ def generate():
                 "code": "",
                 "edge_cases": ""
             }
-        }), 400
+        })
 
     generated_output = generate_code(user_logic)
 
@@ -38,3 +38,5 @@ def generate():
         })
 
     return jsonify({"response": generated_output})
+if __name__ == "__main__":
+    app.run(debug=True)
